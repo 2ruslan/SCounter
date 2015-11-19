@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="rkupchinskii.scounter" >
+
+    <!-- Include required permissions for Google Mobile Ads to run -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- This meta-data tag is required to use Google Play Services. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name="org.achartengine.GraphicalActivity" />
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Measurement"
+            android:label="@string/title_activity_measurement"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Statistic"
+            android:label="@string/title_activity_statistic"
+            android:parentActivityName=".StatisticSelect"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.MainActivity" />
+        </activity>
+        <activity
+            android:name=".MeasurementSelect"
+            android:label="@string/title_activity_measurement_select"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.MainActivity" />
+        </activity>
+        <activity
+            android:name=".MeasurementDetails"
+            android:label="@string/title_activity_measurement_details"
+            android:parentActivityName=".Measurement"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.Measurement" />
+        </activity>
+        <activity
+            android:name=".ExerciseSelect"
+            android:label="@string/title_activity_exercise_select"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Exercise"
+            android:label="@string/title_activity_exercise"
+            android:parentActivityName=".ExerciseSelect"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.ExerciseSelect" />
+        </activity>
+        <activity
+            android:name=".ExerciseDetails"
+            android:label="@string/title_activity_exercise_details"
+            android:parentActivityName=".Exercise"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.Exercise" />
+        </activity>
+        <activity
+            android:name=".StatisticSelect"
+            android:label="@string/title_activity_statistic_select"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.Statistic" />
+        </activity>
+        <activity
+            android:name=".TrainingSelect"
+            android:label="@string/title_activity_training_select"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Training"
+            android:label="@string/title_activity_training"
+            android:parentActivityName=".TrainingSelect"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.TrainingSelect" />
+        </activity>
+        <activity
+            android:name=".PlanSelect"
+            android:label="@string/title_activity_plan_select"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Plan"
+            android:label="@string/title_activity_plan"
+            android:parentActivityName=".PlanSelect"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.PlanSelect" />
+        </activity>
+        <activity
+            android:name=".PlanExercise"
+            android:label="@string/title_activity_plan_exercise"
+            android:parentActivityName=".Plan"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.Plan" />
+        </activity>
+        <activity
+            android:name=".PlanExerciseDetails"
+            android:label="@string/title_activity_plan_exercise_details"
+            android:parentActivityName=".PlanExercise"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rkupchinskii.scounter.PlanExercise" />
+        </activity>
+        <activity
+            android:name=".EndPrg"
+            android:label="@string/title_activity_end_prg" >
+        </activity>
+    </application>
+
+</manifest>

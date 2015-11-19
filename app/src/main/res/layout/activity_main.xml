@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btExerc"
+        style="@style/ButtonStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@layout/button_menu"
+        android:onClick="OnClickExerc"
+        android:text="@string/start_screen_exercise" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_screen_train"
+            android:id="@+id/btTraining"
+            android:layout_below="@+id/btExerc"
+            android:onClick="OnClickTrain"
+            android:background="@layout/button_menu"
+            style="@style/ButtonStyle"
+            />
+
+    <Button
+        android:id="@+id/btMeas"
+        style="@style/ButtonStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btTraining"
+        android:background="@layout/button_menu"
+        android:onClick="OnClickMeas"
+        android:text="@string/start_screen_measurementk" />
+<!--
+    <Button
+        android:id="@+id/btPlan"
+        style="@style/ButtonStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btMeas"
+        android:background="@layout/button_menu"
+        android:onClick="OnClickPlan"
+        android:text="@string/start_screen_plan" />
+-->
+    <Button
+        android:id="@+id/btStatistic"
+        style="@style/ButtonStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btMeas"
+        android:background="@layout/button_menu"
+        android:onClick="OnClickStatistic"
+        android:text="@string/start_screen_statistic" />
+
+    <Button
+        android:id="@+id/btExit"
+        style="@style/ButtonStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@layout/button_menu"
+        android:onClick="OnClickExit"
+        android:text="@string/start_screen_exit" />
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_measurement"></string>
+    <string name="title_activity_measurement_details"></string>
+    <string name="title_activity_exercise"></string>
+    <string name="title_activity_exercise_details"></string>
+    <string name="app_name">7c</string>
+    <string name="action_settings"></string>
+    <string name="title_activity_measurement_select">Measurements</string>
+    <string name="title_activity_exercise_select">Exercises</string>
+    <string name="title_activity_statistic_select">Statistics</string>
+    <string name="title_activity_statistic">Statistics</string>
+    <string name="start_screen_train">Training</string>
+    <string name="start_screen_statistic">Statistics</string>
+    <string name="start_screen_exit">Exit</string>
+    <string name="start_screen_measurementk">Measurements</string>
+    <string name="start_screen_exercise">Exercises</string>
+    <string name="title_add">Add</string>
+    <string name="title_delete">Delete</string>
+    <string name="title_save">Save</string>
+    <string name="title_cancel">Cancel</string>
+    <string name="title_new">New</string>
+    <string name="title_edit">Edit</string>
+    <string name="title_iscnt">Count</string>
+    <string name="title_istim">Time</string>
+    <string name="title_iswgt">Weight</string>
+    <string name="title_go">Go</string>
+    <string name="banner_ad_unit_id">ca-app-pub-8661051886416365/6885385338</string>
+
+    <string-array name="statistic_type">
+        <item>Exercise</item>
+        <item>Meausrement</item>
+    </string-array>
+    <string-array name="statistic_aggr">
+        <item>All</item>
+        <item>Sum</item>
+        <item>Max</item>
+        <item>Min</item>
+    </string-array>
+
+    <string name="title_activity_training_select">Training</string>
+    <string name="title_activity_training">Training</string>
+
+    <string name="title_start">Start</string>
+    <string name="title_stop">Stop</string>
+
+    <string name="start_screen_plan">Planning</string>
+    <string name="title_activity_plan_select">PlanSelect</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_plan">Plan</string>
+    <string name="title_activity_plan_exercise">PlanExercise</string>
+    <string name="title_activity_plan_exercise_details">PlanExerciseDetails</string>
+    <string name="title_activity_end_prg">EndPrg</string>
+
+    <!-- просьба оценить -->
+    <string name="msg_estim">If you like the program (or dislike) Rate and write your own review.</string>
+    <string name="title_noShowEstim">Never</string>
+    <string name="title_estim">Rate</string>
+    <string name="title_later">Later</string>
+
+
+
+</resources>

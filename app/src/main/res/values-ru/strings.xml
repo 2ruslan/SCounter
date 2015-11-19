@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_measurement"> </string>
+    <string name="title_activity_measurement_details"> </string>
+    <string name="title_activity_exercise"> </string>
+    <string name="title_activity_exercise_details"> </string>
+
+    <string name="app_name">7c</string>
+    <string name="action_settings"> </string>
+    <string name="title_activity_measurement_select">Измерения</string>
+    <string name="title_activity_exercise_select">Упражнения</string>
+    <string name="title_activity_statistic_select">Статистика</string>
+    <string name="title_activity_statistic">Статистика</string>
+
+    <string name="start_screen_train">Тренировки</string>
+    <string name="start_screen_statistic">Статистика</string>
+    <string name="start_screen_exit">Выход</string>
+    <string name="start_screen_measurementk">Измерения</string>
+    <string name="start_screen_exercise">Упражнения</string>
+    <string name="title_add">Добавить</string>
+    <string name="title_delete">Удалить</string>
+    <string name="title_save">Сохранить</string>
+    <string name="title_cancel">Отмена</string>
+    <string name="title_new">Добавления</string>
+    <string name="title_edit">Редактирование</string>
+    <string name="title_iscnt">Количество</string>
+    <string name="title_istim">Время</string>
+    <string name="title_iswgt">Вес</string>
+    <string name="title_go">Сформировать</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-8661051886416365/5415325337</string>
+
+
+    <string-array name="statistic_type">
+        <item>Упражнение</item>
+        <item>Измерение</item>
+    </string-array>
+
+    <string-array name="statistic_aggr">
+        <item>Все</item>
+        <item>Сумма</item>
+        <item>Максимум</item>
+        <item>Минимум</item>
+    </string-array>
+
+    <string name="title_activity_training_select">Тренировки</string>
+    <string name="title_activity_training">Тренировки</string>
+
+    <string name="title_start">Старт</string>
+    <string name="title_stop">Стоп</string>
+
+
+    <string name="start_screen_plan">Planning</string>
+    <string name="title_activity_plan_select">PlanSelect</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_plan">Plan</string>
+    <string name="title_activity_plan_exercise">PlanExercise</string>
+    <string name="title_activity_plan_exercise_details">PlanExerciseDetails</string>
+    <string name="title_activity_end_prg">EndPrg</string>
+
+    <!-- просьба оценить -->
+    <string name="msg_estim">Если тебе нравится (или не нравится) эта программа поставь, пожалуйста, свою оценку.</string>
+    <string name="title_noShowEstim">Не напоминать</string>
+    <string name="title_estim">Оценить</string>
+    <string name="title_later">Позже</string>
+
+</resources>
