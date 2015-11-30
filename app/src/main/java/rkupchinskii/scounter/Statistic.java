@@ -11,9 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-
 import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
 import org.achartengine.chart.BarChart;
@@ -61,15 +58,6 @@ public class Statistic extends ActionBarActivity {
 
     }
 
-    private void loadAdMob()
-    {
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder()
-                        . addTestDevice ( AdRequest.DEVICE_ID_EMULATOR )
-	                . addTestDevice("42BC762C13DEBCCD86629DD16A42C588")
-                .build();
-        mAdView.loadAd(adRequest);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -97,9 +85,6 @@ public class Statistic extends ActionBarActivity {
             mChartView = buildIntent();
             layout.addView(mChartView, new LinearLayout.LayoutParams
                     (LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
-
-            loadAdMob();
-
         } else {
             mChartView.repaint();
         }

@@ -105,20 +105,22 @@ public class DB extends SQLiteOpenHelper {
     {
         String result = DATABASE_NAME;
         File[] paths = ContextCompat.getExternalCacheDirs(context);
-        if (paths.length >0)
-        {
-            File exfile = new File(paths[0].getAbsolutePath(), DATABASE_NAME);
-            File local = context.getDatabasePath(DATABASE_NAME);
-            if (local.exists())
-            {
-                if (!exfile.exists() || (exfile.lastModified() < local.lastModified()))
-                    try {
-                        copyFile(local, exfile);
-                    } catch (IOException ex) {}
+        try {
+            if (paths.length > 0) {
+                File exfile = new File(paths[0].getAbsolutePath(), DATABASE_NAME);
+                File local = context.getDatabasePath(DATABASE_NAME);
+                if (local.exists()) {
+                    if (!exfile.exists() || (exfile.lastModified() < local.lastModified()))
+                        try {
+                            copyFile(local, exfile);
+                        } catch (IOException ex) {
+                        }
+                }
+                if (exfile.exists())
+                    result = exfile.getAbsolutePath();
             }
-            if (exfile.exists())
-                result = exfile.getAbsolutePath();
         }
+        catch (Exception ex) {}
 
         return result;
     }
@@ -181,7 +183,7 @@ public class DB extends SQLiteOpenHelper {
             }
             if (oldVersion < 4)
             {
-                db.execSQL("UPDATE " + TABLE_NAMES + " ADD COLUMN " + COLUMN_NAMES_DAYS + " VARCHAR");
+                db.execSQL("ALTER TABLE " + TABLE_NAMES + " ADD COLUMN " + COLUMN_NAMES_DAYS + " VARCHAR");
             }
         }
     }
