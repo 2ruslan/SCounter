@@ -64,6 +64,8 @@ public class DB extends SQLiteOpenHelper {
     public static final String COLUMN_VALUES_WGT_REAL = "wgt_r";
     public static final String COLUMN_VALUES_TIM_REAL = "tim_r";
     public static final String COLUMN_VALUES_RESULT = "result";
+    public static final String COLUMN_VALUES_SET_REAL = "set_r";
+    public static final String COLUMN_VALUES_SET_PLAN = "set_r";
 
     private static final String SQL_CREATE_VALUES = "CREATE TABLE " + TABLE_VALUES + " ("
             + COLUMN_VALUES_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -77,7 +79,9 @@ public class DB extends SQLiteOpenHelper {
             + COLUMN_VALUES_CNT_REAL + " NUMERIC, "
             + COLUMN_VALUES_WGT_REAL + " NUMERIC, "
             + COLUMN_VALUES_TIM_REAL + " NUMERIC, "
-            + COLUMN_VALUES_RESULT + " NUMERIC "
+            + COLUMN_VALUES_RESULT + " NUMERIC, "
+            + COLUMN_VALUES_SET_REAL + " NUMERIC, "
+            + COLUMN_VALUES_SET_PLAN + " NUMERIC "
             + ");";
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private static final String DATABASE_NAME = "training.db";
@@ -190,6 +194,8 @@ public class DB extends SQLiteOpenHelper {
             if (oldVersion < 5)
             {
                 db.execSQL("ALTER TABLE " + TABLE_NAMES + " ADD COLUMN " + COLUMN_NAMES_ISSET + " INTEGER");
+                db.execSQL("ALTER TABLE " + TABLE_VALUES + " ADD COLUMN " + COLUMN_VALUES_SET_REAL + " NUMERIC");
+                db.execSQL("ALTER TABLE " + TABLE_VALUES + " ADD COLUMN " + COLUMN_VALUES_SET_PLAN + " NUMERIC");
             }
         }
     }
