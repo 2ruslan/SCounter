@@ -13,6 +13,7 @@ public class ModelExercise {
             , DB.COLUMN_NAMES_ISWEIGHT
             , DB.COLUMN_NAMES_ISTIME
             , DB.COLUMN_NAMES_ISCOUNT
+            , DB.COLUMN_NAMES_ISSET
     };
 
     private static final String[] SelectValues = new String[]{DB.COLUMN_VALUES_ID
