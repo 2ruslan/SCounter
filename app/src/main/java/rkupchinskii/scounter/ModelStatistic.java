@@ -15,13 +15,13 @@ public class ModelStatistic {
         String group = "DATE(" + DB.COLUMN_VALUES_ONDATE + ")";
 
         if (cwt == Helpers.PARM_CWT_CNT)
-            colValue = DB.COLUMN_VALUES_CNT_REAL;
+            colValue = DB.COLUMN_VALUES_CNT_REAL + " * ifnull(" + DB.COLUMN_VALUES_SET_REAL + ", 1)";
         else if (cwt == Helpers.PARM_CWT_TIM)
             colValue = DB.COLUMN_VALUES_TIM_REAL;
         else if (cwt == Helpers.PARM_CWT_WGT)
             colValue = DB.COLUMN_VALUES_WGT_REAL;
         else if (cwt == Helpers.PARM_CWT_CNTWGT)
-            colValue = DB.COLUMN_VALUES_WGT_REAL +  " * " + DB.COLUMN_VALUES_CNT_REAL;
+            colValue = DB.COLUMN_VALUES_WGT_REAL +  " * " + DB.COLUMN_VALUES_CNT_REAL + " * ifnull(" + DB.COLUMN_VALUES_SET_REAL + ", 1)";
 
 
         String[] columns = null;

@@ -89,13 +89,14 @@ public class Training extends ActionBarActivity {
                         , cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISCOUNT)) == 1
                         , cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISTIME)) == 1
                         , cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISWEIGHT)) == 1
+                        , cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISSET)) == 1
                 );
             }
         });
     }
 
     public void OpenEditor(String id, String name, boolean isStartAdd,
-                           boolean isCnt, boolean isTim, boolean isWgt
+                           boolean isCnt, boolean isTim, boolean isWgt, boolean isSet
     ) {
 
         Intent intent = new Intent(Training.this, Exercise.class);
@@ -107,6 +108,7 @@ public class Training extends ActionBarActivity {
         intent.putExtra(Helpers.PARM_NAME_ISCNT, isCnt);
         intent.putExtra(Helpers.PARM_NAME_ISTIM, isTim);
         intent.putExtra(Helpers.PARM_NAME_ISWGT, isWgt);
+        intent.putExtra(Helpers.PARM_NAME_ISSET, isSet);
 
         startActivityForResult(intent, 0);
 
@@ -119,7 +121,8 @@ public class Training extends ActionBarActivity {
                 Bundle b = data.getExtras();
 
                 OpenEditor(b.getString(Helpers.PARM_NAME_ID), b.getString(Helpers.PARM_NAME_NAME), true,
-                        b.getBoolean(Helpers.PARM_NAME_ISCNT), b.getBoolean(Helpers.PARM_NAME_ISTIM), b.getBoolean(Helpers.PARM_NAME_ISWGT));
+                        b.getBoolean(Helpers.PARM_NAME_ISCNT), b.getBoolean(Helpers.PARM_NAME_ISTIM)
+                        ,b.getBoolean(Helpers.PARM_NAME_ISWGT), b.getBoolean(Helpers.PARM_NAME_ISSET));
             }
         }
         else

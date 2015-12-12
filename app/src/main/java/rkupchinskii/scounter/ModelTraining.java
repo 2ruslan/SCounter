@@ -83,7 +83,8 @@ public class ModelTraining {
                 DB.TABLE_NAMES + "." + DB.COLUMN_NAMES_ID + ", " +
                 DB.TABLE_NAMES + "." + DB.COLUMN_NAMES_ISCOUNT + ", " +
                 DB.TABLE_NAMES + "." + DB.COLUMN_NAMES_ISTIME + ", " +
-                DB.TABLE_NAMES + "." + DB.COLUMN_NAMES_ISWEIGHT +
+                DB.TABLE_NAMES + "." + DB.COLUMN_NAMES_ISWEIGHT +", " +
+                DB.TABLE_NAMES + "." + DB.COLUMN_NAMES_ISSET +
             " from " +
                 DB.TABLE_NAMES + " inner join " + DB.TABLE_VALUES
                     + " on " +  DB.TABLE_NAMES + "." +  DB.COLUMN_NAMES_ID + " = " +  DB.TABLE_VALUES + "." +  DB.COLUMN_VALUES_EXID +

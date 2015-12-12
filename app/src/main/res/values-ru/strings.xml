@@ -25,6 +25,7 @@
     <string name="title_new">Добавления</string>
     <string name="title_edit">Редактирование</string>
     <string name="title_iscnt">Количество</string>
+    <string name="title_isset">Подход</string>
     <string name="title_istim">Время</string>
     <string name="title_iswgt">Вес</string>
     <string name="title_go">Сформировать</string>

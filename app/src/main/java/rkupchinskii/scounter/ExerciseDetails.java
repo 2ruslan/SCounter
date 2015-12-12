@@ -27,15 +27,17 @@ public class ExerciseDetails  extends Activity /* implements SensorEventListener
     boolean isCnt;
     boolean isWgt;
     boolean isTim;
-
+    boolean isSet;
 
     EditText cntCtrl;
     EditText wgtCtrl;
     EditText timCtrl;
+    EditText setCtrl;
 
     TextView cntPCtrl;
     TextView wgtPCtrl;
     TextView timPCtrl;
+    TextView setPCtrl;
 
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
@@ -63,6 +65,7 @@ public class ExerciseDetails  extends Activity /* implements SensorEventListener
         isCnt = ex.getBoolean(Helpers.PARM_NAME_ISCNT);
         isWgt = ex.getBoolean(Helpers.PARM_NAME_ISWGT);
         isTim = ex.getBoolean(Helpers.PARM_NAME_ISTIM);
+        isSet = ex.getBoolean(Helpers.PARM_NAME_ISSET);
 
         cntCtrl = (EditText) findViewById(R.id.mdCount);
         cntPCtrl = (TextView) findViewById(R.id.mdCountP);
@@ -73,10 +76,14 @@ public class ExerciseDetails  extends Activity /* implements SensorEventListener
         timCtrl = (EditText) findViewById(R.id.mdTime);
         timPCtrl = (TextView) findViewById(R.id.mdTimeP);
 
+        setCtrl = (EditText) findViewById(R.id.mdSet);
+        setPCtrl = (TextView) findViewById(R.id.mdSetP);
+
         boolean addMode = idVal.equals("");
 
         ((Button) findViewById(R.id.mdDelete)).setText(Helpers.getNoButtonTitle(addMode));
-
+        if (!isSet)
+            (findViewById(R.id.llSet)).setVisibility(LinearLayout.GONE);
         if (!isCnt)
             (findViewById(R.id.llCnt)).setVisibility(LinearLayout.GONE);
         if (!isTim)
@@ -93,6 +100,9 @@ public class ExerciseDetails  extends Activity /* implements SensorEventListener
 
             timCtrl.setText(ex.getString(Helpers.PARM_TIM_REAL), TextView.BufferType.EDITABLE);
             timPCtrl.setText(ex.getString(Helpers.PARM_TIM_PLAN));
+
+            setCtrl.setText(ex.getString(Helpers.PARM_SET_REAL), TextView.BufferType.EDITABLE);
+            setPCtrl.setText(ex.getString(Helpers.PARM_SET_PLAN));
         }
 
         if (isCnt)
@@ -219,6 +229,8 @@ public class ExerciseDetails  extends Activity /* implements SensorEventListener
                 , wgtCtrl.getText().toString()
                 , timPCtrl.getText().toString()
                 , timCtrl.getText().toString()
+                , setPCtrl.getText().toString()
+                , setCtrl.getText().toString()
         );
 
         theEnd();

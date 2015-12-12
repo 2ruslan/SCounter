@@ -25,6 +25,7 @@
     <string name="title_new">Введення</string>
     <string name="title_edit">Редагування</string>
     <string name="title_iscnt">Кількість</string>
+    <string name="title_isset">Підход</string>
     <string name="title_istim">Час</string>
     <string name="title_iswgt">Вага</string>
     <string name="title_go">Переглянути</string>

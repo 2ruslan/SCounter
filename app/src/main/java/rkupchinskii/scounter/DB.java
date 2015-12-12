@@ -65,7 +65,7 @@ public class DB extends SQLiteOpenHelper {
     public static final String COLUMN_VALUES_TIM_REAL = "tim_r";
     public static final String COLUMN_VALUES_RESULT = "result";
     public static final String COLUMN_VALUES_SET_REAL = "set_r";
-    public static final String COLUMN_VALUES_SET_PLAN = "set_r";
+    public static final String COLUMN_VALUES_SET_PLAN = "set_p";
 
     private static final String SQL_CREATE_VALUES = "CREATE TABLE " + TABLE_VALUES + " ("
             + COLUMN_VALUES_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "

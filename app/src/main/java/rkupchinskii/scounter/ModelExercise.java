@@ -25,6 +25,8 @@ public class ModelExercise {
             , DB.COLUMN_VALUES_TIM_REAL
             , DB.COLUMN_VALUES_WGT_PLAN
             , DB.COLUMN_VALUES_WGT_REAL
+            , DB.COLUMN_VALUES_SET_PLAN
+            , DB.COLUMN_VALUES_SET_REAL
             , Helpers.ExDetailsR + " as " + DB.H_VALUES_GRP
     };
 
@@ -38,7 +40,7 @@ public class ModelExercise {
     }
 
     static public long EditName(Context context, String id, String name
-            , boolean isCnt, boolean isWgt, boolean isTim) {
+            , boolean isCnt, boolean isWgt, boolean isTim, boolean isSet) {
         SQLiteDatabase db = DB.getDBW(context);
 
         boolean isNew = id.equals("");
@@ -48,6 +50,7 @@ public class ModelExercise {
         values.put(DB.COLUMN_NAMES_ISCOUNT, isCnt);
         values.put(DB.COLUMN_NAMES_ISTIME, isTim);
         values.put(DB.COLUMN_NAMES_ISWEIGHT, isWgt);
+        values.put(DB.COLUMN_NAMES_ISSET, isSet);
 
         if (isNew)
             values.put(DB.COLUMN_NAMES_TYPE, DB.COLUMN_NAMES_TYPE_EXER);
@@ -87,6 +90,7 @@ public class ModelExercise {
             , String cp, String cr
             , String wp, String wr
             , String tp, String tr
+            , String sp, String sr
     ) {
         boolean isNew = valId.equals("");
 
@@ -97,6 +101,8 @@ public class ModelExercise {
         values.put(DB.COLUMN_VALUES_WGT_PLAN, wp.equals("") ? null : wp);
         values.put(DB.COLUMN_VALUES_TIM_REAL, tr.equals("") ? null : tr);
         values.put(DB.COLUMN_VALUES_TIM_PLAN, tp.equals("") ? null : tr);
+        values.put(DB.COLUMN_VALUES_SET_PLAN, sp.equals("") ? null : sp);
+        values.put(DB.COLUMN_VALUES_SET_REAL, sr.equals("") ? null : sr);
 
         if (isNew) {
             values.put(DB.COLUMN_VALUES_EXID, nameId);

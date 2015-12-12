@@ -93,6 +93,7 @@ public class ExerciseSelect extends ActionBarActivity {
                     intent.putExtra(Helpers.PARM_NAME_ISCNT, cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISCOUNT)) == 1);
                     intent.putExtra(Helpers.PARM_NAME_ISTIM, cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISTIME)) == 1);
                     intent.putExtra(Helpers.PARM_NAME_ISWGT, cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISWEIGHT)) == 1);
+                    intent.putExtra(Helpers.PARM_NAME_ISSET, cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISSET)) == 1);
                     setResult(RESULT_OK, intent);
                     finish();
                 }
@@ -104,6 +105,7 @@ public class ExerciseSelect extends ActionBarActivity {
                     intent.putExtra(Helpers.PARM_NAME_ISCNT, cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISCOUNT)) == 1);
                     intent.putExtra(Helpers.PARM_NAME_ISTIM, cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISTIME)) == 1);
                     intent.putExtra(Helpers.PARM_NAME_ISWGT, cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISWEIGHT)) == 1);
+                    intent.putExtra(Helpers.PARM_NAME_ISSET, cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISSET)) == 1);
                  //   intent.putExtra(Helpers.PARM_TRAIN_ID, idTrain);
                     startActivityForResult(intent, 0);
                 }
@@ -121,7 +123,8 @@ public class ExerciseSelect extends ActionBarActivity {
                         cursor.getString(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_NAME)),
                         cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISCOUNT)) == 1,
                         cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISWEIGHT)) == 1,
-                        cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISTIME)) == 1
+                        cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISTIME)) == 1,
+                        cursor.getInt(cursor.getColumnIndexOrThrow(DB.COLUMN_NAMES_ISSET)) == 1
                 );
 
                 return true;
@@ -130,19 +133,21 @@ public class ExerciseSelect extends ActionBarActivity {
     }
 
     private void Edit(final String pid, String pname
-            , boolean piscnt, boolean piswgt, boolean pistim) {
+            , boolean piscnt, boolean piswgt, boolean pistim, boolean pisset) {
         final boolean addmode = pid.equals("");
         final Context context = this;
         View frg = View.inflate(this, R.layout.fragment_exerc_edit, null);
         final CheckBox cbIsCnt = (CheckBox) frg.findViewById(R.id.cbIsCnt);
         final CheckBox cbIsWgt = (CheckBox) frg.findViewById(R.id.cbIsWgt);
         final CheckBox cbIsTim = (CheckBox) frg.findViewById(R.id.cbIsTim);
+        final CheckBox cbIsSet = (CheckBox) frg.findViewById(R.id.cbIsSet);
         final EditText etName = (EditText) frg.findViewById(R.id.etName);
 
         etName.setText(pname);
         cbIsCnt.setChecked(piscnt);
         cbIsWgt.setChecked(piswgt);
         cbIsTim.setChecked(pistim);
+        cbIsSet.setChecked(pisset);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomDialogTheme);
         builder.setTitle(Helpers.getEditDlgTitle(addmode));
@@ -155,7 +160,7 @@ public class ExerciseSelect extends ActionBarActivity {
                     public void onClick(DialogInterface dialog, int id) {
 
                         ModelExercise.EditName(context, pid, etName.getText().toString()
-                                , cbIsCnt.isChecked(), cbIsWgt.isChecked(), cbIsTim.isChecked());
+                                , cbIsCnt.isChecked(), cbIsWgt.isChecked(), cbIsTim.isChecked(), cbIsSet.isChecked());
                         refreshListView();
                     }
                 })
@@ -170,7 +175,7 @@ public class ExerciseSelect extends ActionBarActivity {
     }
 
     public void OnClickAdd(View view) {
-        Edit("", "", true, false, false);
+        Edit("", "", true, false, false, false);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

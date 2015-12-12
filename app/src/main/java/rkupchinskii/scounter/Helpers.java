@@ -46,6 +46,10 @@ public class Helpers {
 
     public static final String PARAM_EXERC_ID = "32";
 
+    public static final String PARM_SET_PLAN = "33";
+    public static final String PARM_SET_REAL = "34";
+    public static final String PARM_NAME_ISSET = "35";
+
     public static final  String ExDetailsP = DB.TABLE_VALUES + "." + DB.COLUMN_VALUES_ORDER + " || ') ' || " +
             " (case when " + DB.TABLE_VALUES + "." + DB.COLUMN_VALUES_CNT_PLAN + " is not null and " + DB.TABLE_VALUES + "." +  DB.COLUMN_VALUES_WGT_PLAN + " is not null then " +
             DB.TABLE_VALUES + "." + DB.COLUMN_VALUES_CNT_PLAN + " || ' x ' || " + DB.TABLE_VALUES + "." +  DB.COLUMN_VALUES_WGT_PLAN +
@@ -58,6 +62,7 @@ public class Helpers {
             " || " + DB.TABLE_VALUES + "." + DB.COLUMN_VALUES_TIM_PLAN + " else '' end) ";
 
     public static final  String ExDetailsR =
+            " (case when "+ DB.TABLE_VALUES + "." + DB.COLUMN_VALUES_SET_REAL + " is not null then " + DB.TABLE_VALUES + "." + DB.COLUMN_VALUES_SET_REAL + " || ':' else ''  end) || " +
             " (case when " + DB.TABLE_VALUES + "." + DB.COLUMN_VALUES_CNT_REAL + " is not null and " + DB.TABLE_VALUES + "." +  DB.COLUMN_VALUES_WGT_REAL + " is not null then " +
             DB.TABLE_VALUES + "." + DB.COLUMN_VALUES_CNT_REAL + " || ' x ' || " + DB.TABLE_VALUES + "." +  DB.COLUMN_VALUES_WGT_REAL +
             " when " + DB.TABLE_VALUES + "." + DB.COLUMN_VALUES_CNT_REAL + " is not null then " + DB.TABLE_VALUES + "." + DB.COLUMN_VALUES_CNT_REAL +

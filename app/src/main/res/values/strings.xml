@@ -23,6 +23,7 @@
     <string name="title_new">New</string>
     <string name="title_edit">Edit</string>
     <string name="title_iscnt">Count</string>
+    <string name="title_isset">Set</string>
     <string name="title_istim">Time</string>
     <string name="title_iswgt">Weight</string>
     <string name="title_go">Go</string>

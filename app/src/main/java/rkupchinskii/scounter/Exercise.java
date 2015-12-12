@@ -31,6 +31,7 @@ public class Exercise extends ActionBarActivity {
     boolean isCnt;
     boolean isTim;
     boolean isWgt;
+    boolean isSet;
     ListView listView;
     Cursor cursor;
     private SimpleCursorAdapter dataAdapter;
@@ -49,6 +50,7 @@ public class Exercise extends ActionBarActivity {
         isCnt = b.getBoolean(Helpers.PARM_NAME_ISCNT);
         isTim = b.getBoolean(Helpers.PARM_NAME_ISTIM);
         isWgt = b.getBoolean(Helpers.PARM_NAME_ISWGT);
+        isSet = b.getBoolean(Helpers.PARM_NAME_ISSET);
 
         setTitle(nameExe);
 
@@ -111,6 +113,8 @@ public class Exercise extends ActionBarActivity {
                         , cursor.getString(cursor.getColumnIndexOrThrow(DB.COLUMN_VALUES_WGT_REAL))
                         , cursor.getString(cursor.getColumnIndexOrThrow(DB.COLUMN_VALUES_TIM_PLAN))
                         , cursor.getString(cursor.getColumnIndexOrThrow(DB.COLUMN_VALUES_TIM_REAL))
+                        , cursor.getString(cursor.getColumnIndexOrThrow(DB.COLUMN_VALUES_SET_PLAN))
+                        , cursor.getString(cursor.getColumnIndexOrThrow(DB.COLUMN_VALUES_SET_REAL))
                 );
             }
         });
@@ -119,7 +123,8 @@ public class Exercise extends ActionBarActivity {
     public void OpenEditor(String idE, String idV,
                            String cp, String cr,
                            String wp, String wr,
-                           String tp, String tr
+                           String tp, String tr,
+                           String sp, String sr
     ) {
         Intent intent = new Intent(Exercise.this, ExerciseDetails.class);
 
@@ -132,11 +137,13 @@ public class Exercise extends ActionBarActivity {
         intent.putExtra(Helpers.PARM_WGT_PLAN, wp);
         intent.putExtra(Helpers.PARM_TIM_REAL, tr);
         intent.putExtra(Helpers.PARM_TIM_PLAN, tp);
+        intent.putExtra(Helpers.PARM_SET_REAL, sr);
+        intent.putExtra(Helpers.PARM_SET_PLAN, sp);
 
         intent.putExtra(Helpers.PARM_NAME_ISCNT, isCnt);
         intent.putExtra(Helpers.PARM_NAME_ISTIM, isTim);
         intent.putExtra(Helpers.PARM_NAME_ISWGT, isWgt);
-
+        intent.putExtra(Helpers.PARM_NAME_ISSET, isSet);
         startActivityForResult(intent, 0);
     }
 
@@ -147,7 +154,7 @@ public class Exercise extends ActionBarActivity {
     }
 
     public void OnClickAdd(View view) {
-        OpenEditor(idExe, "", "", "", "", "", "", "");
+        OpenEditor(idExe, "", "", "", "", "", "", "", "", "");
     }
 
     public void close() {

@@ -9,10 +9,40 @@
     tools:context="rkupchinskii.scounter.ExerciseDetails">
 
     <LinearLayout
-        android:id="@+id/llCnt"
+        android:id="@+id/llSet"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
 
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_isset" />
+
+        <TextView
+            android:id="@+id/mdSetP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/mdSet"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:inputType="numberDecimal"
+            android:textSize="30sp">
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCnt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llSet"
         >
 
         <TextView
