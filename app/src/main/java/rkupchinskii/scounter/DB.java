@@ -16,7 +16,7 @@ import java.util.Date;
 
 public class DB extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 5;
 
     public static final int COLUMN_NAMES_TYPE_EXER = 0;
     public static final int COLUMN_NAMES_TYPE_MEAS = 1;
@@ -34,6 +34,7 @@ public class DB extends SQLiteOpenHelper {
     public static final String COLUMN_NAMES_ISCOUNT = "iscount";
     public static final String COLUMN_NAMES_ISTIME = "istime";
     public static final String COLUMN_NAMES_ISWEIGHT = "isweight";
+    public static final String COLUMN_NAMES_ISSET = "isset";
     public static final String COLUMN_NAMES_ONDATE = "ondt";
     public static final String COLUMN_NAMES_DAYS = "days";
 
@@ -46,7 +47,8 @@ public class DB extends SQLiteOpenHelper {
             + COLUMN_NAMES_ISTIME + " INTEGER, "
             + COLUMN_NAMES_ISWEIGHT + " INTEGER, "
             + COLUMN_NAMES_ONDATE + " DATETIME, "
-            + COLUMN_NAMES_DAYS + " VARCHAR "
+            + COLUMN_NAMES_DAYS + " VARCHAR, "
+            + COLUMN_NAMES_ISSET + " INTEGER "
             + ");";
     // values
     public static final String TABLE_VALUES = "value";
@@ -184,6 +186,10 @@ public class DB extends SQLiteOpenHelper {
             if (oldVersion < 4)
             {
                 db.execSQL("ALTER TABLE " + TABLE_NAMES + " ADD COLUMN " + COLUMN_NAMES_DAYS + " VARCHAR");
+            }
+            if (oldVersion < 5)
+            {
+                db.execSQL("ALTER TABLE " + TABLE_NAMES + " ADD COLUMN " + COLUMN_NAMES_ISSET + " INTEGER");
             }
         }
     }
