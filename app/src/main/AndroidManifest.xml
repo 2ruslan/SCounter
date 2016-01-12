@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="rkupchinskii.scounter" >
+    package="rkupchinskii.scounter">
 
     <!-- Include required permissions for Google Mobile Ads to run -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,14 +11,12 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-
-
+        android:theme="@style/AppTheme">
         <activity android:name="org.achartengine.GraphicalActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +27,7 @@
             android:name=".Measurement"
             android:label="@string/title_activity_measurement"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.MainActivity" />
@@ -38,7 +36,7 @@
             android:name=".Statistic"
             android:label="@string/title_activity_statistic"
             android:parentActivityName=".StatisticSelect"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.MainActivity" />
@@ -47,7 +45,7 @@
             android:name=".MeasurementSelect"
             android:label="@string/title_activity_measurement_select"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.MainActivity" />
@@ -57,7 +55,7 @@
             android:label="@string/title_activity_measurement_details"
             android:parentActivityName=".Measurement"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateAlwaysVisible" >
+            android:windowSoftInputMode="stateAlwaysVisible">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.Measurement" />
@@ -66,7 +64,7 @@
             android:name=".ExerciseSelect"
             android:label="@string/title_activity_exercise_select"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.MainActivity" />
@@ -75,7 +73,7 @@
             android:name=".Exercise"
             android:label="@string/title_activity_exercise"
             android:parentActivityName=".ExerciseSelect"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.ExerciseSelect" />
@@ -85,7 +83,7 @@
             android:label="@string/title_activity_exercise_details"
             android:parentActivityName=".Exercise"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateAlwaysVisible" >
+            android:windowSoftInputMode="stateAlwaysVisible">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.Exercise" />
@@ -94,7 +92,7 @@
             android:name=".StatisticSelect"
             android:label="@string/title_activity_statistic_select"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.Statistic" />
@@ -103,7 +101,7 @@
             android:name=".TrainingSelect"
             android:label="@string/title_activity_training_select"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.MainActivity" />
@@ -112,7 +110,7 @@
             android:name=".Training"
             android:label="@string/title_activity_training"
             android:parentActivityName=".TrainingSelect"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.TrainingSelect" />
@@ -121,7 +119,7 @@
             android:name=".PlanSelect"
             android:label="@string/title_activity_plan_select"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.MainActivity" />
@@ -130,7 +128,7 @@
             android:name=".Plan"
             android:label="@string/title_activity_plan"
             android:parentActivityName=".PlanSelect"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.PlanSelect" />
@@ -139,7 +137,7 @@
             android:name=".PlanExercise"
             android:label="@string/title_activity_plan_exercise"
             android:parentActivityName=".Plan"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.Plan" />
@@ -149,15 +147,17 @@
             android:label="@string/title_activity_plan_exercise_details"
             android:parentActivityName=".PlanExercise"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateAlwaysVisible" >
+            android:windowSoftInputMode="stateAlwaysVisible">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="rkupchinskii.scounter.PlanExercise" />
         </activity>
         <activity
             android:name=".EndPrg"
-            android:label="@string/title_activity_end_prg" >
-        </activity>
+            android:label="@string/title_activity_end_prg"></activity>
+        <activity
+            android:name=".timer"
+            android:label="@string/title_activity_timer"></activity>
     </application>
 
 </manifest>

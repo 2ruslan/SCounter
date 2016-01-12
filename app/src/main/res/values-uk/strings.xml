@@ -21,6 +21,7 @@
     <string name="title_add">Додати</string>
     <string name="title_delete">Видалити</string>
     <string name="title_save">Зберегти</string>
+    <string name="title_save_timer">Зберегти + Таймер</string>
     <string name="title_cancel">Відміна</string>
     <string name="title_new">Введення</string>
     <string name="title_edit">Редагування</string>

@@ -128,29 +128,47 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/llButtons"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/llTim">
+        android:layout_below="@+id/llTim"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/mdDelete"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mdSave"
+                android:background="@layout/button_left"
+                android:onClick="OnClickDelete" />
+
+            <Button
+                android:id="@+id/mdSave"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@layout/button_right"
+                android:onClick="OnClickSave"
+                android:text="@string/title_save" />
+
+        </LinearLayout>
 
         <Button
-            android:id="@+id/mdDelete"
-            style="@style/ButtonStyle"
-            android:layout_width="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/mdSave"
-            android:background="@layout/button_left"
-            android:onClick="OnClickDelete" />
-
-        <Button
-            android:id="@+id/mdSave"
-            style="@style/ButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@layout/button_right"
-            android:onClick="OnClickSave"
-            android:text="@string/title_save" />
+            android:text="@string/title_save_timer"
+            android:background="@layout/button_add"
+            />
 
     </LinearLayout>
 
