@@ -20,6 +20,7 @@
     <string name="title_delete">Delete</string>
     <string name="title_save">Save</string>
     <string name="title_save_timer">Save + Timer</string>
+    <string name="title_timer">Timer</string>
     <string name="title_cancel">Cancel</string>
     <string name="title_new">New</string>
     <string name="title_edit">Edit</string>

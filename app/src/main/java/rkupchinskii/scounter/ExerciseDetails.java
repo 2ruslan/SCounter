@@ -236,8 +236,23 @@ public class ExerciseDetails  extends Activity /* implements SensorEventListener
         theEnd();
     }
 
+    private void Timer(){
+        Intent intent = new Intent(ExerciseDetails.this, timer_select.class);
+
+        startActivityForResult(intent, 0);
+    }
+
     public void OnClickSave(View view) {
         Save();
+    }
+
+    public void OnClickSaveTimer(View view) {
+        Save();
+        Timer();
+    }
+
+    public void OnClickTimer(View view) {
+        Timer();
     }
 
     public void OnClickDelete(View view) {
