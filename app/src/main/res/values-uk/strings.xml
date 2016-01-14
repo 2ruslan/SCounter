@@ -23,6 +23,8 @@
     <string name="title_save">Зберегти</string>
     <string name="title_save_timer">Зберегти + Таймер</string>
     <string name="title_timer">Таймер</string>
+    <string name="title_timer_1">Таймер 1</string>
+    <string name="title_timer_2">Таймер 2</string>
     <string name="title_cancel">Відміна</string>
     <string name="title_new">Введення</string>
     <string name="title_edit">Редагування</string>
@@ -67,4 +69,5 @@
     <string name="title_noShowEstim">Не нагадувати</string>
     <string name="title_estim">Оцінити</string>
     <string name="title_later">Пізніше</string>
+    <string name="title_activity_timer">timer</string>
 </resources>

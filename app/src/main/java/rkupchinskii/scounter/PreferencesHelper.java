@@ -8,6 +8,8 @@ public class PreferencesHelper {
     public static final String APP_PREFERENCES_NO_SHOW_PROP_O = "counter223";
     public static final String APP_PREFERENCES_NO_SHOW_PROP_P = "counter4";
     public static final String APP_PREFERENCES_FIRST_RUN = "counter3";
+    public static final String APP_PREFERENCES_TIMER_1 = "time1";
+    public static final String APP_PREFERENCES_TIMER_2 = "time2";
 
 
     private static SharedPreferences mSettings;
@@ -17,14 +19,38 @@ public class PreferencesHelper {
     }
 
     //region сдвиг дней тренировок
-    public static void SetDayOffset(int val)    {
+    public static void SetTimer_1(Integer val)    {
         SharedPreferences.Editor editor = mSettings.edit();
-        editor.putInt(APP_PREFERENCES_WORK_DAYS_OFFSET, val);
+        if(val != null)
+            editor.putInt(APP_PREFERENCES_TIMER_1, val);
+        else
+            editor.putInt(APP_PREFERENCES_TIMER_1, 0);
         editor.apply();
     }
 
-    public static int GetDayOffset()    {
-        return mSettings.getInt(APP_PREFERENCES_WORK_DAYS_OFFSET, 0);
+    public static void SetTimer_2(Integer val)    {
+        SharedPreferences.Editor editor = mSettings.edit();
+        if(val != null)
+            editor.putInt(APP_PREFERENCES_TIMER_2, val);
+        else
+            editor.putInt(APP_PREFERENCES_TIMER_2, 0);
+
+        editor.apply();
+    }
+
+    public static Integer GetTimer_1()    {
+        Integer res;
+        res = mSettings.getInt(APP_PREFERENCES_TIMER_1, 0);
+        if(res <=0)
+            res = null;
+        return res;
+    }
+    public static Integer GetTimer_2()    {
+        Integer res;
+        res = mSettings.getInt(APP_PREFERENCES_TIMER_2, 0);
+        if(res <=0)
+            res = null;
+        return res;
     }
     //endregion сдвиг дней тренировок
 

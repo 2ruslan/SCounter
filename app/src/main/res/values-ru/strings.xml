@@ -23,6 +23,8 @@
     <string name="title_save">Сохранить</string>
     <string name="title_save_timer">Сохранить + Таймер</string>
     <string name="title_timer">Таймер</string>
+    <string name="title_timer_1">Таймер 1</string>
+    <string name="title_timer_2">Таймер 2</string>
     <string name="title_cancel">Отмена</string>
     <string name="title_new">Добавления</string>
     <string name="title_edit">Редактирование</string>
@@ -68,5 +70,6 @@
     <string name="title_noShowEstim">Не напоминать</string>
     <string name="title_estim">Оценить</string>
     <string name="title_later">Позже</string>
+    <string name="title_activity_timer">timer</string>
 
 </resources>

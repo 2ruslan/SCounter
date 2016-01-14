@@ -7,71 +7,122 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
 public class timer_select extends Activity {
 
+    Integer time1;
+    Integer time2;
+
+    Button bt_timer_1;
+    Button bt_timer_2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer_select);
+
+        bt_timer_1 = (Button)findViewById(R.id.timer_1);
+        bt_timer_2 = (Button)findViewById(R.id.timer_2);
+
+        initTimers();
     }
 
-    private void Edit(final String pid, String pname
-            , boolean piscnt, boolean piswgt, boolean pistim, boolean pisset) {
-        final boolean addmode = pid.equals("");
-        final Context context = this;
-        View frg = View.inflate(this, R.layout.fragment_exerc_edit, null);
-        final CheckBox cbIsCnt = (CheckBox) frg.findViewById(R.id.cbIsCnt);
-        final CheckBox cbIsWgt = (CheckBox) frg.findViewById(R.id.cbIsWgt);
-        final CheckBox cbIsTim = (CheckBox) frg.findViewById(R.id.cbIsTim);
-        final CheckBox cbIsSet = (CheckBox) frg.findViewById(R.id.cbIsSet);
-        final EditText etName = (EditText) frg.findViewById(R.id.etName);
+    private  void initTimers(){
+        time1 = PreferencesHelper.GetTimer_1();
+        time2 = PreferencesHelper.GetTimer_2();
 
-        etName.setText(pname);
-        cbIsCnt.setChecked(piscnt);
-        cbIsWgt.setChecked(piswgt);
-        cbIsTim.setChecked(pistim);
-        cbIsSet.setChecked(pisset);
+        if(time1 == null && time2 == null) {
+            Edit();
+        }
+
+        SyncTimer();
+    }
+
+    private void Edit() {
+
+        View frg = View.inflate(this, R.layout.timer_edit, null);
+        final EditText ed_timer_1 = (EditText) frg.findViewById(R.id.ed_timer_1);
+        final EditText ed_timer_2 = (EditText) frg.findViewById(R.id.ed_timer_2);
+
+        if(time1 != null)
+            ed_timer_1.setText(String.valueOf(time1));
+        if(time2 != null)
+            ed_timer_2.setText(String.valueOf(time2));
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomDialogTheme);
-        builder.setTitle(Helpers.getEditDlgTitle(addmode));
 
+        builder.setTitle(R.string.title_edit);
 
         builder
                 .setView(frg)
                 .setCancelable(false)
                 .setPositiveButton(R.string.title_save, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        String t1 = ed_timer_1.getText().toString();
+                        String t2 = ed_timer_2.getText().toString();
 
-                        ModelExercise.EditName(context, pid, etName.getText().toString()
-                                , cbIsCnt.isChecked(), cbIsWgt.isChecked(), cbIsTim.isChecked(), cbIsSet.isChecked());
-                      //  refreshListView();
+                        if (t1 != null && !t1.equals(""))
+                            time1 = Integer.valueOf(t1);
+                        else
+                            time1 = null;
+
+                        if (t2 != null && !t2.equals(""))
+                            time2 = Integer.valueOf(t2);
+                        else
+                            time2 = null;
+
+                        PreferencesHelper.SetTimer_1(time1);
+                        PreferencesHelper.SetTimer_2(time2);
+
+                        SyncTimer();
                     }
                 })
-                .setNegativeButton(addmode ? R.string.title_cancel : R.string.title_delete, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.title_cancel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        if (!addmode) {
-                            ModelExercise.DeleteName(context, pid);
-                        //    refreshListView();
-                        }
+
                     }
                 }).show();
+
+
+    }
+
+    private void SyncTimer(){
+        if(time1 != null)
+            bt_timer_1.setText( String.valueOf(time1));
+        else
+            bt_timer_1.setText( "");
+
+        if(time2 != null)
+            bt_timer_2.setText( String.valueOf(time2));
+        else
+            bt_timer_2.setText( "");
     }
 
     public void OnClickTimer_1(View view) {
-        StartTimer(1);
+        if(time1 != null)
+            StartTimer(time1);
+        else
+            Edit();
     }
     public void OnClickTimer_2(View view) {
-        StartTimer(2);
+        if(time2 != null)
+            StartTimer(time2);
+        else
+            Edit();
     }
-    public void OnClickTimer_3(View view) {
-        StartTimer(3);
+
+    public void OnCancel(View view) {
+        setResult(RESULT_CANCELED);
+        finish();
     }
-    public void OnClickTimer_4(View view) {
-        StartTimer(4);
+
+    public void OnEdit(View view) {
+        Edit();
     }
+
     private void StartTimer(int time){
         Intent intent = new Intent(timer_select.this, timer.class);
         intent.putExtra(timer.PRM_SECOND, time);
