@@ -154,11 +154,17 @@
         </activity>
         <activity
             android:name=".EndPrg"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_end_prg" />
         <activity
             android:name=".timer"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_timer" />
-        <activity android:name=".timer_select"></activity>
+        <activity android:name=".timer_select"
+            android:screenOrientation="portrait"
+            >
+
+        </activity>
     </application>
 
 </manifest>

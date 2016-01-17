@@ -60,6 +60,8 @@
                 android:background="@layout/button_add"
                 android:text="@string/title_edit"
                 android:onClick="OnEdit"
+                android:ems="10"
+                android:inputType="numberSigned"
                 />
 
             <Button
@@ -69,6 +71,7 @@
                 android:background="@layout/button_add"
                 android:text="@string/title_cancel"
                 android:onClick="OnCancel"
+
                 />
 
         </LinearLayout>
