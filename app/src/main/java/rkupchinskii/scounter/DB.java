@@ -115,6 +115,30 @@ public class DB extends SQLiteOpenHelper {
             if (paths.length > 0) {
                 File exfile = new File(paths[0].getAbsolutePath(), DATABASE_NAME);
                 File local = context.getDatabasePath(DATABASE_NAME);
+                if (exfile.exists()) {
+                    if (!local.exists() || (local.lastModified() < exfile.lastModified()))
+                        try {
+                            copyFile(exfile, local);
+                        } catch (IOException ex) {
+                        }
+                }
+             //   if (local.exists())
+             //       result = local.getAbsolutePath();
+            }
+        }
+        catch (Exception ex) {}
+
+        return result;
+    }
+/*
+    private static String prepareBDPath(Context context)
+    {
+        String result = DATABASE_NAME;
+        File[] paths = ContextCompat.getExternalCacheDirs(context);
+        try {
+            if (paths.length > 0) {
+                File exfile = new File(paths[0].getAbsolutePath(), DATABASE_NAME);
+                File local = context.getDatabasePath(DATABASE_NAME);
                 if (local.exists()) {
                     if (!exfile.exists() || (exfile.lastModified() < local.lastModified()))
                         try {
@@ -130,6 +154,7 @@ public class DB extends SQLiteOpenHelper {
 
         return result;
     }
+*/
 
     public DB(Context context) {
         super(context, prepareBDPath(context), null, DATABASE_VERSION);

@@ -44,6 +44,12 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void OnClickSettings(View view) {
+        Intent intent = new Intent(MainActivity.this, Settings.class);
+        startActivity(intent);
+    }
+
+
     public void OnClickExerc(View view) {
         Intent intent = new Intent(MainActivity.this, ExerciseSelect.class);
         intent.putExtra(Helpers.PARM_MODE,  Helpers.PARM_MODE_VIEW);

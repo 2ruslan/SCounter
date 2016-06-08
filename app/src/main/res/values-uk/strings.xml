@@ -7,7 +7,7 @@
     <string name="title_activity_exercise_details"> </string>
 
     <string name="app_name">7c</string>
-    <string name="action_settings"> </string>
+    <string name="action_settings">Налаштування</string>
     <string name="title_activity_measurement_select">Заміри</string>
     <string name="title_activity_exercise_select">Вправи</string>
     <string name="title_activity_statistic_select">Статистика</string>
